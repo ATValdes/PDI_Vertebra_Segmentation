@@ -1,0 +1,5 @@
+ID,Image,Mask,Diagnostic
+nrewsqarut1,test_images/L1.tif,test_images/L1_mask.tif,NORMAL
+nrewsqarut2,test_images/L2.tif,test_images/L2_mask.tif,NORMAL
+nrewsqarut3,test_images/L3.tif,test_images/L3_mask.tif,NORMAL
+nrewsqarut4,test_images/L4.tif,test_images/L4_mask.tif,NORMAL

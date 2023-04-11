@@ -1,0 +1,116 @@
+INFO:radiomics.batch: pyradiomics version: v3.0.1
+INFO:radiomics.batch: Loading CSV
+INFO:radiomics.batch: Loading Done
+INFO:radiomics.batch: Patients: 4
+INFO:radiomics.featureextractor: Loading parameter file Params_dxa.yaml
+INFO:radiomics.batch: Enabled input images types: {'Original': {}}
+INFO:radiomics.batch: Enabled features: {'firstorder': [], 'glcm': None, 'glrlm': None, 'glszm': None, 'gldm': None, 'ngtdm': None}
+INFO:radiomics.batch: Current settings: {'minimumROIDimensions': 2, 'minimumROISize': None, 'normalize': True, 'normalizeScale': 1, 'removeOutliers': None, 'resampledPixelSpacing': None, 'interpolator': 'sitkBSpline', 'preCrop': False, 'padDistance': 5, 'distances': [1], 'force2D': False, 'force2Ddimension': 0, 'resegmentRange': None, 'label': 255, 'additionalInfo': True}
+INFO:radiomics.batch: (1/4) Processing Patient (Image: test_images/L1.tif, Mask: test_images/L1_mask.tif)
+INFO:radiomics.featureextractor: Calculating features with label: 255
+INFO:radiomics.featureextractor: Loading image and mask
+INFO:radiomics.featureextractor: Adding image type "Original" with custom settings: {}
+INFO:radiomics.featureextractor: Calculating features for original image
+INFO:radiomics.featureextractor: Computing firstorder
+INFO:radiomics.featureextractor: Computing glcm
+WARNING:radiomics.glcm: GLCM is symmetrical, therefore Sum Average = 2 * Joint Average, only 1 needs to be calculated
+INFO:radiomics.featureextractor: Computing glrlm
+INFO:radiomics.featureextractor: Computing glszm
+INFO:radiomics.featureextractor: Computing gldm
+INFO:radiomics.featureextractor: Computing ngtdm
+INFO:radiomics.batch: (2/4) Processing Patient (Image: test_images/L2.tif, Mask: test_images/L2_mask.tif)
+INFO:radiomics.featureextractor: Calculating features with label: 255
+INFO:radiomics.featureextractor: Loading image and mask
+INFO:radiomics.featureextractor: Adding image type "Original" with custom settings: {}
+INFO:radiomics.featureextractor: Calculating features for original image
+INFO:radiomics.featureextractor: Computing firstorder
+INFO:radiomics.featureextractor: Computing glcm
+WARNING:radiomics.glcm: GLCM is symmetrical, therefore Sum Average = 2 * Joint Average, only 1 needs to be calculated
+INFO:radiomics.featureextractor: Computing glrlm
+INFO:radiomics.featureextractor: Computing glszm
+INFO:radiomics.featureextractor: Computing gldm
+INFO:radiomics.featureextractor: Computing ngtdm
+INFO:radiomics.batch: (3/4) Processing Patient (Image: test_images/L3.tif, Mask: test_images/L3_mask.tif)
+INFO:radiomics.featureextractor: Calculating features with label: 255
+INFO:radiomics.featureextractor: Loading image and mask
+INFO:radiomics.featureextractor: Adding image type "Original" with custom settings: {}
+INFO:radiomics.featureextractor: Calculating features for original image
+INFO:radiomics.featureextractor: Computing firstorder
+INFO:radiomics.featureextractor: Computing glcm
+WARNING:radiomics.glcm: GLCM is symmetrical, therefore Sum Average = 2 * Joint Average, only 1 needs to be calculated
+INFO:radiomics.featureextractor: Computing glrlm
+INFO:radiomics.featureextractor: Computing glszm
+INFO:radiomics.featureextractor: Computing gldm
+INFO:radiomics.featureextractor: Computing ngtdm
+INFO:radiomics.batch: (4/4) Processing Patient (Image: test_images/L4.tif, Mask: test_images/L4_mask.tif)
+INFO:radiomics.featureextractor: Calculating features with label: 255
+INFO:radiomics.featureextractor: Loading image and mask
+INFO:radiomics.featureextractor: Adding image type "Original" with custom settings: {}
+INFO:radiomics.featureextractor: Calculating features for original image
+INFO:radiomics.featureextractor: Computing firstorder
+INFO:radiomics.featureextractor: Computing glcm
+WARNING:radiomics.glcm: GLCM is symmetrical, therefore Sum Average = 2 * Joint Average, only 1 needs to be calculated
+INFO:radiomics.featureextractor: Computing glrlm
+INFO:radiomics.featureextractor: Computing glszm
+INFO:radiomics.featureextractor: Computing gldm
+INFO:radiomics.featureextractor: Computing ngtdm
+INFO:radiomics.batch: Extraction complete, writing CSV
+INFO:radiomics.batch: CSV writing complete
+INFO:radiomics.batch: pyradiomics version: v3.0.1
+INFO:radiomics.batch: Loading CSV
+INFO:radiomics.batch: Loading Done
+INFO:radiomics.batch: Patients: 4
+INFO:radiomics.featureextractor: Loading parameter file Params_dxa.yaml
+INFO:radiomics.batch: Enabled input images types: {'Original': {}}
+INFO:radiomics.batch: Enabled features: {'firstorder': [], 'glcm': None, 'glrlm': None, 'glszm': None, 'gldm': None, 'ngtdm': None}
+INFO:radiomics.batch: Current settings: {'minimumROIDimensions': 2, 'minimumROISize': None, 'normalize': True, 'normalizeScale': 1, 'removeOutliers': None, 'resampledPixelSpacing': None, 'interpolator': 'sitkBSpline', 'preCrop': False, 'padDistance': 5, 'distances': [1], 'force2D': False, 'force2Ddimension': 0, 'resegmentRange': None, 'label': 255, 'additionalInfo': True}
+INFO:radiomics.batch: (1/4) Processing Patient (Image: test_images/L1.tif, Mask: test_images/L1_mask.tif)
+INFO:radiomics.featureextractor: Calculating features with label: 255
+INFO:radiomics.featureextractor: Loading image and mask
+INFO:radiomics.featureextractor: Adding image type "Original" with custom settings: {}
+INFO:radiomics.featureextractor: Calculating features for original image
+INFO:radiomics.featureextractor: Computing firstorder
+INFO:radiomics.featureextractor: Computing glcm
+WARNING:radiomics.glcm: GLCM is symmetrical, therefore Sum Average = 2 * Joint Average, only 1 needs to be calculated
+INFO:radiomics.featureextractor: Computing glrlm
+INFO:radiomics.featureextractor: Computing glszm
+INFO:radiomics.featureextractor: Computing gldm
+INFO:radiomics.featureextractor: Computing ngtdm
+INFO:radiomics.batch: (2/4) Processing Patient (Image: test_images/L2.tif, Mask: test_images/L2_mask.tif)
+INFO:radiomics.featureextractor: Calculating features with label: 255
+INFO:radiomics.featureextractor: Loading image and mask
+INFO:radiomics.featureextractor: Adding image type "Original" with custom settings: {}
+INFO:radiomics.featureextractor: Calculating features for original image
+INFO:radiomics.featureextractor: Computing firstorder
+INFO:radiomics.featureextractor: Computing glcm
+WARNING:radiomics.glcm: GLCM is symmetrical, therefore Sum Average = 2 * Joint Average, only 1 needs to be calculated
+INFO:radiomics.featureextractor: Computing glrlm
+INFO:radiomics.featureextractor: Computing glszm
+INFO:radiomics.featureextractor: Computing gldm
+INFO:radiomics.featureextractor: Computing ngtdm
+INFO:radiomics.batch: (3/4) Processing Patient (Image: test_images/L3.tif, Mask: test_images/L3_mask.tif)
+INFO:radiomics.featureextractor: Calculating features with label: 255
+INFO:radiomics.featureextractor: Loading image and mask
+INFO:radiomics.featureextractor: Adding image type "Original" with custom settings: {}
+INFO:radiomics.featureextractor: Calculating features for original image
+INFO:radiomics.featureextractor: Computing firstorder
+INFO:radiomics.featureextractor: Computing glcm
+WARNING:radiomics.glcm: GLCM is symmetrical, therefore Sum Average = 2 * Joint Average, only 1 needs to be calculated
+INFO:radiomics.featureextractor: Computing glrlm
+INFO:radiomics.featureextractor: Computing glszm
+INFO:radiomics.featureextractor: Computing gldm
+INFO:radiomics.featureextractor: Computing ngtdm
+INFO:radiomics.batch: (4/4) Processing Patient (Image: test_images/L4.tif, Mask: test_images/L4_mask.tif)
+INFO:radiomics.featureextractor: Calculating features with label: 255
+INFO:radiomics.featureextractor: Loading image and mask
+INFO:radiomics.featureextractor: Adding image type "Original" with custom settings: {}
+INFO:radiomics.featureextractor: Calculating features for original image
+INFO:radiomics.featureextractor: Computing firstorder
+INFO:radiomics.featureextractor: Computing glcm
+WARNING:radiomics.glcm: GLCM is symmetrical, therefore Sum Average = 2 * Joint Average, only 1 needs to be calculated
+INFO:radiomics.featureextractor: Computing glrlm
+INFO:radiomics.featureextractor: Computing glszm
+INFO:radiomics.featureextractor: Computing gldm
+INFO:radiomics.featureextractor: Computing ngtdm
+INFO:radiomics.batch: Extraction complete, writing CSV
+INFO:radiomics.batch: CSV writing complete
