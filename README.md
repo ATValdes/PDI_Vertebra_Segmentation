@@ -1,4 +1,5 @@
-# PDI Vertebra Segmentation - PDI Final
+# DIP Vertebra Segmentation - DIP Final
+Code made for a project of Digital Image Processing . It uses images of collums taken using DXA and segmentates each of the vertebra, then, creates a mask of the inside of each vertebra to later be analized using Pyradiomics.
 
 ## Main Variables
 * **White_value**: Determines the number considered true white.
