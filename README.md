@@ -1,6 +1,10 @@
 # DIP Vertebra Segmentation - DIP Final
 Code made for a project of Digital Image Processing . It uses images of collums taken using DXA and segmentates each of the vertebra, then, creates a mask of the inside of each vertebra to later be analized using Pyradiomics.
 
+## Note
+Some images might not work with the code. Some examples in the image folder. Fifth example does not work due to having perfect white pixels
+in the middle of the vertebra. Sixth does not work due to the column not being centered.
+Those are the main reason why the code might not work for an image.
 ## Main Variables
 * **White_value**: Determines the number considered true white.
 * **Image_url**: Is the path where the DXA images will be read and stored.

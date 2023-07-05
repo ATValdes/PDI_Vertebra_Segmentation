@@ -1,0 +1,2 @@
+La quinta y sexta imagen no se segmentan bien debido a los puntos blancos dentro
+de la vertebra o la desviacion o no centralizacion de la columna.

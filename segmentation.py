@@ -6,20 +6,6 @@ from skimage import io
 from masks_algorithm import MaskAlgorithm
 
 
-# class RegionGrowing:
-#     """
-#     Prototype of region growing algorithm thats not used
-#     """
-#     @staticmethod
-#     def region_growing(image, starting_y, starting_x, new_value, stop_value):
-#         if image[starting_y, starting_x] != stop_value:
-#             image[starting_y, starting_x] = new_value
-#             image = RegionGrowing.region_growing(image, starting_y, starting_x + 1, new_value, stop_value)
-#             image = RegionGrowing.region_growing(image, starting_y, starting_x - 1, new_value, stop_value)
-#             image = RegionGrowing.region_growing(image, starting_y + 1, starting_x, new_value, stop_value)
-#             image = RegionGrowing.region_growing(image, starting_y - 1, starting_x, new_value, stop_value)
-#         return image
-
 class ImageManager:
     def __init__(self, white_value = 255, x_value = 0, first_y = 1, second_y = 2) -> None:
         self.WHITE = white_value
@@ -42,7 +28,7 @@ class ImageAnalysis(ImageManager):
                 edges.append(y_axis)
             y_axis += 1
         if discovered_edges == 2:
-            return edges
+            return edges    
 
     def normalize_edges(self, left_edges: list, right_edges: list) -> None:
         if left_edges[self.FIRST_Y] > right_edges[self.FIRST_Y]:
@@ -73,19 +59,19 @@ class ImageManipulation(ImageManager):
             image[y_value, x_value] = 0
             y_value += 1
 
-    def crop_image(self, left_edges: list, right_edges: list, roi_image: numpy.ndarray, black_limits: bool):
+    def crop_image(self, left_edges: list, right_edges: list, upper_line_position: int, bottom_line_position: int, roi_image: numpy.ndarray, black_limits: bool):
         """
         Crops the image and sets the pixels past the upper and lower limits in black.
         """
         roi = numpy.copy(roi_image[left_edges[self.FIRST_Y]:right_edges[self.SECOND_Y] + 1, left_edges[self.X_VALUE]:right_edges[self.X_VALUE]])
-        upper_limit_y = 0
+
+        upper_limit_y = upper_line_position - left_edges[self.FIRST_Y]  # Calculates the new value for the position of the white line
+        bottom_limit_y = bottom_line_position - left_edges[self.FIRST_Y]  # In the cropped image
+
         x_limit = roi.shape[1]
-        while roi[upper_limit_y, 0, 0] != self.WHITE:
-            upper_limit_y += 1
-        bottom_limit_y = roi.shape[0] - 1
-        while roi[bottom_limit_y, 0, 0] != self.WHITE:
-            bottom_limit_y -= 1
         x_value = 0
+        
+        
         while x_value != x_limit:
             if roi[upper_limit_y, x_value, 0] != self.WHITE:
                 if roi[upper_limit_y + 1, x_value, 0] == self.WHITE:
@@ -122,11 +108,14 @@ class SegmentationProcedure:
             left_edges = image_analysis.discover_edges(yl_value_for_search, first_quarter, roi_img)
             right_edges = image_analysis.discover_edges(yr_value_for_search, third_quarter, roi_img)
 
-            yl_value_for_search = left_edges[2]
-            yr_value_for_search = right_edges[2]
+            yl_value_for_search = left_edges[2]  # Used to save where the last vert limit is so it keeps searching for
+            yr_value_for_search = right_edges[2]  # the next one from there
+
+            yl_value_for_crop = left_edges[1]  # Used to find the vert limits once the image is cropped
+            yr_value_for_crop = left_edges[2]
             
             image_analysis.normalize_edges(left_edges, right_edges)
-            vert_segmented = image_manipulation.crop_image(left_edges, right_edges, roi_img, black_limits)
+            vert_segmented = image_manipulation.crop_image(left_edges, right_edges, yl_value_for_crop, yr_value_for_crop, roi_img, black_limits)
             vert_mask = mask_algorithm.create_mask(white_value, vert_segmented)
             
             if not os.path.exists(f'images/{file_number}_segmented'):
