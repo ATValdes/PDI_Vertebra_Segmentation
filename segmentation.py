@@ -90,7 +90,7 @@ class ImageManipulation(ImageManager):
             if roi[upper_limit_y, x_value, 0] != self.WHITE:
                 if roi[upper_limit_y + 1, x_value, 0] == self.WHITE:
                     upper_limit_y += 1
-                elif roi[upper_limit_y - 1, x_value] == self.WHITE:
+                elif roi[upper_limit_y - 1, x_value, 0] == self.WHITE:
                     upper_limit_y -= 1
             self.upper_pixels_black(x_value, upper_limit_y, roi, black_limits)
             x_value += 1
@@ -115,10 +115,16 @@ class SegmentationProcedure:
         image_manipulation = ImageManipulation(white_value=white_value)
         image_analysis = ImageAnalysis(white_value=white_value)
         vert_number = 1
-        
+        yl_value_for_search = 0
+        yr_value_for_search = 0
+
         while vert_number <= vert_count:
-            left_edges = image_analysis.discover_edges(0, first_quarter, roi_img)
-            right_edges = image_analysis.discover_edges(0, third_quarter, roi_img)
+            left_edges = image_analysis.discover_edges(yl_value_for_search, first_quarter, roi_img)
+            right_edges = image_analysis.discover_edges(yr_value_for_search, third_quarter, roi_img)
+
+            yl_value_for_search = left_edges[2]
+            yr_value_for_search = right_edges[2]
+            
             image_analysis.normalize_edges(left_edges, right_edges)
             vert_segmented = image_manipulation.crop_image(left_edges, right_edges, roi_img, black_limits)
             vert_mask = mask_algorithm.create_mask(white_value, vert_segmented)
@@ -130,3 +136,4 @@ class SegmentationProcedure:
             io.imsave(f'images/{file_number}_segmented/L{vert_number}_mask.tif', vert_mask)
             
             vert_number += 1
+            
